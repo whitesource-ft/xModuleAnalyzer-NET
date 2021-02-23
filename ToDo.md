@@ -1,3 +1,4 @@
 # To Do List
-- Item 1  
-- Item 2  
+- Add capability for using `WS_` environment variables instead of a config file  
+- Add CLI parameter aliases  
+- Add multi-threading support  
