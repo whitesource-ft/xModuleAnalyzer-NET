@@ -1,13 +1,13 @@
 ---
 name: Contribution Request
 about: Discuss potential changes you wish to contribute
-title: "[CR] [ws-tool-name] Contribution Request Topic"
+title: "[CR] [xModuleAnalyzer-NET] Contribution Request Topic"
 labels: enhancement
 assignees: ''
 
 ---
 
-**Tool:** wss-tool-name  
+**Tool:** xModuleAnalyzer-NET
 
 **Planned Changes:**  
 Describe the changes you wish to contribute, to initiate a discussion with WhiteSource-FT team.

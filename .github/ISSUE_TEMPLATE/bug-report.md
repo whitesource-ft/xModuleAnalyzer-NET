@@ -1,7 +1,7 @@
 ---
 name: Bug Report
 about: Create a report to help us improve
-title: "[BUG] [ws-tool-name] Issue Short Description"
+title: "[BUG] [xModuleAnalyzer-NET] Issue Short Description"
 labels: bug
 assignees: ''
 
@@ -24,9 +24,8 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Environment Details**  
- - OS: [e.g. Ubuntu 18.04]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+ - OS: [e.g. Windows 10]
+ - Tool Version [e.g. 1.0]
 
 **Additional Context**  
 Add any other context about the problem here.

@@ -1,7 +1,7 @@
 ---
 name: Question
 about: General question/how-to
-title: "[Question] [ws-tool-name] Question Topic"
+title: "[Question] [xModuleAnalyzer-NET] Question Topic"
 labels: question
 assignees: ''
 
@@ -11,6 +11,5 @@ assignees: ''
 Ask your question here. Please be as specific as possible.
 
 **Environment Details**  
- - OS: [e.g. Ubuntu 18.04]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+ - OS: [e.g. Windows 10]
+ - Tool Version [e.g. 1.0]
