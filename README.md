@@ -38,7 +38,7 @@ All parameters are consistent with the WhiteSource [Unified Agent](https://white
 
 | Parameter | Type | Required | Description |
 | :--- | :---: | :---: | :--- |
-| <nobr>**-xModulePath**</nobr> | string | No | Specifies the xModuleAnalyzer setup file name. If not provided, "`./multi-module-setup_net.txt`" will be used. |
+| **&#x2011;xModulePath** | string | No | Specifies the xModuleAnalyzer setup file name. If not provided, "`./multi-module-setup_net.txt`" will be used. |
 | <nobr>**-fsaJarPath**</nobr> | string | No | Specifies the full/relative path to the Unified Agent jar file. If not provided, "`./wss-unified-agent.jar`" will be used. If the agent doesn't exist in that location, it will be automatically downloaded. |
 | <nobr>**-c**</nobr> | string | No | Specifies the full/relative path to the Unified Agent's EUA config file (the file must exist prior to the execution). If not provided, "`./wss-unified-agent-EUA-net.config`" will be used. |
 | <nobr>**-d**</nobr> | string | Yes | Specifies the path to the solution's root directory (the directory to be scanned). |
