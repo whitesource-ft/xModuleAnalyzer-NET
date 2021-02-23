@@ -24,8 +24,8 @@ NuGet packages may be referenced either in a `packages.config` file or wihin eac
 See [WhiteSource Prioritize (EUA) Prerequisites](https://whitesource.atlassian.net/wiki/spaces/WD/pages/572850338/EUA+Setting+Up+a+Project+for+Effective+Usage+Analysis)
 
 ## Installation
-1. Download **xModuleAnalyzer-NET.ps1** to your computer.
-2. Download **wss-unified-agent-EUA-net.config** and modify the configuration as needed, or alternatively, provide your own EUA (WhiteSource Prioritize) configuration file.  
+1. Download the latest [xModuleAnalyzer-NET](https://github.com/whitesource-ft/xModuleAnalyzer-NET/releases/latest/download/xModuleAnalyzer-NET.zip) package to your computer and extract it.
+2. Modify the provided **wss-unified-agent-EUA-net.config** file as needed, or alternatively, use your own EUA (WhiteSource Prioritize) configuration file.  
    The configuration file must be placed in the same directory as **xModuleAnalyzer-NET.ps1**.  
 
 ## Execution
