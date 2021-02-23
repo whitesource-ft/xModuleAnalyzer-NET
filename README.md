@@ -1,7 +1,7 @@
 ![Logo](https://whitesource-resources.s3.amazonaws.com/ws-sig-images/Whitesource_Logo_178x44.png)  
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GitHub release](https://img.shields.io/github/release/whitesource-ft/xModuleAnalyzer-NET.svg)](https://github.com/whitesource-ft/xModuleAnalyzer-NET/releases/latest)  
+[![GitHub release](https://img.shields.io/github/v/release/whitesource-ft/xModuleAnalyzer-NET.svg?include_prereleases)](https://github.com/whitesource-ft/xModuleAnalyzer-NET/releases/latest)  
 # WhiteSource xModuleAnalyzer-NET
 **xModuleAnalyzer-NET** is a tool that executes WhiteSource's [Effective Usage Analysis](https://whitesource.atlassian.net/wiki/spaces/WD/pages/572751999/Introduction+to+WhiteSource+Prioritize#IntroductiontoWhiteSourcePrioritize-WhatisEffectiveUsageAnalysis?) scans for multi-project C# solutions.  
 It imitates the execution method of WhiteSource's [xModuleAnalyzer](https://whitesource.atlassian.net/wiki/spaces/WD/pages/651919363/EUA+Support+for+Multi-Module+Analysis), except it performs the [analyzeMultiModule setup](https://whitesource.atlassian.net/wiki/spaces/WD/pages/651919363/EUA+Support+for+Multi-Module+Analysis#EUA:SupportforMulti-ModuleAnalysis-Step1:RuntheUnifiedAgentwiththe'-analyzeMultiModule'Parameter) step automatically, so both the setup and the scan are combined into a single execution.  
