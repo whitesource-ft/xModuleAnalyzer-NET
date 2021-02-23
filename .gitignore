@@ -10,12 +10,15 @@ _misc/
 local/
 log/
 target/
+whitesource/
 
 # Excluded Files - Extensions
 *.iml
 *.png
 *.tar.gz
 *.url
+*.jar
+*.log
 
 # Excluded Files - Naming Convention
 local-env.*
