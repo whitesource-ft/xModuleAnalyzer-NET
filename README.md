@@ -39,11 +39,11 @@ All parameters are consistent with the WhiteSource [Unified Agent](https://white
 | Parameter | Type | Required | Description |
 | :--- | :---: | :---: | :--- |
 | **&#x2011;xModulePath** | string | No | Specifies the xModuleAnalyzer setup file name. If not provided, "`./multi-module-setup_net.txt`" will be used. |
-| <nobr>**-fsaJarPath**</nobr> | string | No | Specifies the full/relative path to the Unified Agent jar file. If not provided, "`./wss-unified-agent.jar`" will be used. If the agent doesn't exist in that location, it will be automatically downloaded. |
-| <nobr>**-c**</nobr> | string | No | Specifies the full/relative path to the Unified Agent's EUA config file (the file must exist prior to the execution). If not provided, "`./wss-unified-agent-EUA-net.config`" will be used. |
-| <nobr>**-d**</nobr> | string | Yes | Specifies the path to the solution's root directory (the directory to be scanned). |
-| <nobr>**-productName**</nobr> | string | No | Specifies the WhiteSource Product name to be used. If not provided, the name of the solution's root directory will be used. |
-| <nobr>**-viaDebug**</nobr> | switch | No | If specified, the Unified Agent will execute an EUA scan with debug logging enabled. Note that this is a PowerShell switch, not a boolean. To use it, just add `-viaDebug` (and not `-vaDebug true`). |
+| **&#x2011;fsaJarPath** | string | No | Specifies the full/relative path to the Unified Agent jar file. If not provided, "`./wss-unified-agent.jar`" will be used. If the agent doesn't exist in that location, it will be automatically downloaded. |
+| **&#x2011;c** | string | No | Specifies the full/relative path to the Unified Agent's EUA config file (the file must exist prior to the execution). If not provided, "`./wss-unified-agent-EUA-net.config`" will be used. |
+| **&#x2011;d** | string | Yes | Specifies the path to the solution's root directory (the directory to be scanned). |
+| **&#x2011;productName** | string | No | Specifies the WhiteSource Product name to be used. If not provided, the name of the solution's root directory will be used. |
+| **&#x2011;viaDebug** | switch | No | If specified, the Unified Agent will execute an EUA scan with debug logging enabled. Note that this is a PowerShell switch, not a boolean. To use it, just add `-viaDebug` (and not `-vaDebug true`). |
 
 ### Execution Examples
 Scanning the multi-project solution **HelloWorld**:  
