@@ -18,7 +18,7 @@ The tool identifies the applicable [appPath](https://whitesource.atlassian.net/w
 
 ## Supported Project Types
 C# solutions with one or more projects that include open-source NuGet packages.  
-NuGet packages may be referenced either in a `packages.config` file or wihin each project's manifest file (`*.csproj`).  
+NuGet packages may be referenced either in a `packages.config` file or within each project's manifest file (`*.csproj`).  
 
 ## Prerequisites
 See [WhiteSource Prioritize (EUA) Prerequisites](https://whitesource.atlassian.net/wiki/spaces/WD/pages/572850338/EUA+Setting+Up+a+Project+for+Effective+Usage+Analysis)
