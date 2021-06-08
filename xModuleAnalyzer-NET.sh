@@ -7,7 +7,7 @@ do
 echo "Found" $csproject 
 CSPROJ=$(basename $csproject .csproj)
 
-find ./ -type f \( -wholename "*/bin/Release/netcore*/$CSPROJ.dll" ! -wholename "*build*" ! -wholename "*test*" ! -wholename "*host*" ! -wholename "*migration*" \) -print >> multi-module.txt
+find ./ -type f \( -wholename "*/bin/Release/*/$CSPROJ.dll" ! -wholename "*build*" ! -wholename "*test*" ! -wholename "*host*" ! -wholename "*migration*" \) -print >> multi-module.txt
 
 done
 
