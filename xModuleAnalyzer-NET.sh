@@ -1,8 +1,8 @@
 #!/bin/bash
 # For use with linux actions in https://github.com/whitesource-ft/ws-examples/tree/main/Prioritize/DotNet/Multi-Module
 # Modify SEARCHDIR & RELEASEDIR before running
-SEARCHDIR=$(PWD)
-RELEASEDIR=*bin*
+SEARCHDIR=$(pwd)
+RELEASEDIR='/bin/'
 
 # Finds all the .csproject file in the SEARCHDIR excluding names with build, test, host, & migration
 for csproject in  $(find $SEARCHDIR -type f \( -wholename "*.csproj" ! -wholename "*build*" ! -wholename "*test*" ! -wholename "*host*" ! -wholename "*migration*" \))
@@ -27,12 +27,12 @@ for DLL in $dlls;
 do
 # For each dll in the above list, print out the variables that will be used for the prioritize scan
 echo "appPath:" $DLL
-DIR=$(echo $DLL | awk -F $RELEASEDIR '{print $1}')
+DIR="$(echo "$DLL" | awk -F "$RELEASEDIR" '{print $1}')"
 echo "directory:" $DIR
 PROJECT=$(basename $DLL .dll)
 echo "PROJECT:" $PROJECT
 
 # Run a WSS prioritize scan for each DLL in the multi-module.txt file
-java -jar wss-unified-agent.jar -appPath $DLL -d $DIR -project $PROJECT
+java -jar wss-unified-agent.jar -appPath "$DLL" -d "$DIR" -project "$PROJECT"
 
 done

@@ -1,7 +1,7 @@
 ﻿param(
-	[string]$xModulePath = "multi-module-setup_net.txt",
-	[string]$fsaJarPath = "wss-unified-agent.jar",
-	[string]$c = "wss-unified-agent-EUA-net.config",
+	[string]$xModulePath,
+	[string]$fsaJarPath,
+	[string]$c,
 	[string]$d,
 	[string]$productName,
 	[switch]$viaDebug
