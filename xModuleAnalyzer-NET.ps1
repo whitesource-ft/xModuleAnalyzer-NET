@@ -197,9 +197,9 @@ If (Test-Path -Path "$xModulePath") {
 	Log "Setup file created: $xModulePath"
 	
 	$xModuleContent = Get-Content -Path "$xModulePath"
-	$ScanDirs = $xModuleContent | ? {$_.StartsWith("ProjectFolderPath")} | % {$($_ -split '=')[1]}
-	$AppPaths = $xModuleContent | ? {$_.StartsWith("AppPath")} | % {$($_ -split '=')[1]}
-	$ProjectNames = $xModuleContent | ? {$_.StartsWith("defaultName")} | % {$($_ -split '=')[1]}
+	[string[]]$ScanDirs = $xModuleContent | ? {$_.StartsWith("ProjectFolderPath")} | % {$($_ -split '=')[1]}
+	[string[]]$AppPaths = $xModuleContent | ? { $_.StartsWith("AppPath") } | % { $($_ -split '=')[1]}
+	[string[]]$ProjectNames = $xModuleContent | ? { $_.StartsWith("defaultName") } | % { $($_ -split '=')[1]}
 } Else {
 	Terminate "Setup file not found: $xModulePath"
 }
