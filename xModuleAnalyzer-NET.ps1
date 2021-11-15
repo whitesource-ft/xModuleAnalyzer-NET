@@ -75,9 +75,9 @@
 [string]$ScriptName = "xModuleAnalyzer-NET"
 Push-Location -Path $CurFolder;
 
-If (!$xModulePath) {$xModulePath = Read-Host "xModulePath"}
-If (!$fsaJarPath) {$fsaJarPath = Read-Host "fsaJarPath"}
-If (!$c) {$c = Read-Host "c"}
+# If (!$xModulePath) {$xModulePath = Read-Host "xModulePath"}
+# If (!$fsaJarPath) {$fsaJarPath = Read-Host "fsaJarPath"}
+# If (!$c) {$c = Read-Host "c"}
 If (!$d) {$d = Read-Host "d"}
 
 If ($d) {try { $d = Resolve-Path $d } catch { Write-Host "Invalid path: -d" }}
