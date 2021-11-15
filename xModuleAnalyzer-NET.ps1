@@ -114,7 +114,7 @@ Function Terminate([string]$Text) {
 	If ($LogTerminal) {
 		"$Text" >> "$TerminalLogFile"
 	}
-	Sleep 3
+	Start-Sleep -s 3
 	exit 1
 }
 
