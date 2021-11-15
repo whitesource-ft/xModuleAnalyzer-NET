@@ -77,6 +77,7 @@ Push-Location -Path $CurFolder;
 
 # If (!$xModulePath) {$xModulePath = Read-Host "xModulePath"}
 # If (!$fsaJarPath) {$fsaJarPath = Read-Host "fsaJarPath"}
+If (!$fsaJarPath) { $fsaJarPath = "wss-unified-agent.jar" }
 # If (!$c) {$c = Read-Host "c"}
 If (!$d) {$d = Read-Host "d"}
 
