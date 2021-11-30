@@ -19,6 +19,7 @@ whitesource/
 *.url
 *.jar
 *.log
+*.txt
 
 # Excluded Files - Naming Convention
 local-env.*

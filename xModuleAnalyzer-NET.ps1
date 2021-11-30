@@ -75,9 +75,11 @@
 [string]$ScriptName = "xModuleAnalyzer-NET"
 Push-Location -Path $CurFolder;
 
-If (!$xModulePath) {$xModulePath = Read-Host "xModulePath"}
-If (!$fsaJarPath) {$fsaJarPath = Read-Host "fsaJarPath"}
-If (!$c) {$c = Read-Host "c"}
+# If (!$xModulePath) {$xModulePath = Read-Host "xModulePath"}
+If (!$xModulePath) { $xModulePath = "multi-module-setup_net.txt" }
+# If (!$fsaJarPath) {$fsaJarPath = Read-Host "fsaJarPath"}
+If (!$fsaJarPath) { $fsaJarPath = "wss-unified-agent.jar" }
+# If (!$c) {$c = Read-Host "c"}
 If (!$d) {$d = Read-Host "d"}
 
 If ($d) {try { $d = Resolve-Path $d } catch { Write-Host "Invalid path: -d" }}
@@ -112,7 +114,7 @@ Function Terminate([string]$Text) {
 	If ($LogTerminal) {
 		"$Text" >> "$TerminalLogFile"
 	}
-	Sleep 3
+	Start-Sleep -s 3
 	exit 1
 }
 
@@ -197,9 +199,9 @@ If (Test-Path -Path "$xModulePath") {
 	Log "Setup file created: $xModulePath"
 	
 	$xModuleContent = Get-Content -Path "$xModulePath"
-	$ScanDirs = $xModuleContent | ? {$_.StartsWith("ProjectFolderPath")} | % {$($_ -split '=')[1]}
-	$AppPaths = $xModuleContent | ? {$_.StartsWith("AppPath")} | % {$($_ -split '=')[1]}
-	$ProjectNames = $xModuleContent | ? {$_.StartsWith("defaultName")} | % {$($_ -split '=')[1]}
+	[string[]]$ScanDirs = $xModuleContent | ? {$_.StartsWith("ProjectFolderPath")} | % {$($_ -split '=')[1]}
+	[string[]]$AppPaths = $xModuleContent | ? { $_.StartsWith("AppPath") } | % { $($_ -split '=')[1]}
+	[string[]]$ProjectNames = $xModuleContent | ? { $_.StartsWith("defaultName") } | % { $($_ -split '=')[1]}
 } Else {
 	Terminate "Setup file not found: $xModulePath"
 }
