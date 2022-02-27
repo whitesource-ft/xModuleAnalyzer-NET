@@ -4,7 +4,8 @@
 	[string]$c,
 	[string]$d,
 	[string]$productName,
-	[switch]$viaDebug
+	[switch]$viaDebug,
+	[string]$javaArgs
 )
 <#
     .NAME
@@ -43,6 +44,10 @@
     (Optional switch) If specified, the Unified Agent will execute an EUA scan with
 	debug logging enabled.
 
+	.PARAMETER javaArgs
+	(Optional) Provides arguments after the "java" command to e.g. increase heap space.
+	It must be quoted, so PS doesn't assume it's an argument for this script
+
     .EXAMPLE
     PS> xModuleAnalyzer-NET -d "C:\Source\HelloWorld"
 
@@ -77,11 +82,12 @@ Push-Location -Path $CurFolder;
 
 # If (!$xModulePath) {$xModulePath = Read-Host "xModulePath"}
 If (!$xModulePath) { $xModulePath = "multi-module-setup_net.txt" }
-# If (!$fsaJarPath) {$fsaJarPath = Read-Host "fsaJarPath"}
-If (!$fsaJarPath) { $fsaJarPath = "wss-unified-agent.jar" }
 # If (!$c) {$c = Read-Host "c"}
+If (!$c) { try {$c = Resolve-Path "wss-unified-agent-EUA-net.config"} catch { Write-Host "No -c argument specified; wss-unified-agent-EUA-net.config not found in current directory"} }
 If (!$d) {$d = Read-Host "d"}
 
+If ($fsaJarPath) {try {$fsaJarPath = Resolve-Path $fsaJarPath} catch { Write-Host "Invalid path: -fsaJarPath" }}
+If ($c) {try { $c = Resolve-Path $c } catch { Write-Host "Invalid path: -c" }}
 If ($d) {try { $d = Resolve-Path $d } catch { Write-Host "Invalid path: -d" }}
 
 [bool]$LogTerminal = $true
@@ -220,8 +226,8 @@ If ($AppPaths.Count -gt 0) {
 		Log ("{0} Scanning Module {1}/{2}: {3}" -f (Get-Date -f "[HH:mm:ss]"),($i+1),$ModuleCnt,$ProjectNames[$i])
 		
 		# UA Command
-		$UACmd = 'java -jar "{0}" -c "{1}" -appPath "{2}" -d "{3}" -product "{4}" -project "{5}" -viaDebug {6}' `
-					-f "$fsaJarPath","$c",$AppPaths[$i],$ScanDirs[$i],"$productName",$ProjectNames[$i], "$viaDebug".ToLower();
+		$UACmd = 'java {7} -jar "{0}" -c "{1}" -appPath "{2}" -d "{3}" -product "{4}" -project "{5}" -viaDebug {6}' `
+					-f "$fsaJarPath","$c",$AppPaths[$i],$ScanDirs[$i],"$productName",$ProjectNames[$i],"$viaDebug".ToLower(),"$javaArgs";
 		
 		Log "`tUA Command: $UACmd`n" -NoEcho
 		$CmdOutput = (cmd /c "$UACmd" 2>&1); $eCode = $LASTEXITCODE;
