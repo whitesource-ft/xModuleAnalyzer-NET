@@ -82,6 +82,7 @@ Push-Location -Path $CurFolder;
 
 # If (!$xModulePath) {$xModulePath = Read-Host "xModulePath"}
 If (!$xModulePath) { $xModulePath = "multi-module-setup_net.txt" }
+If (!$fsaJarPath) { $fsaJarPath = "wss-unified-agent.jar" }
 # If (!$c) {$c = Read-Host "c"}
 If (!$c) { try {$c = Resolve-Path "wss-unified-agent-EUA-net.config"} catch { Write-Host "No -c argument specified; wss-unified-agent-EUA-net.config not found in current directory"} }
 If (!$d) {$d = Read-Host "d"}
