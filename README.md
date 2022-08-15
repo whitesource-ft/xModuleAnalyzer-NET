@@ -1,3 +1,6 @@
+:no_entry: [DEPRECATED] This repository will be inaccessible starting January 9th, 2023.  
+Multi Module Prioritize(EUA) scanning examples are now available at [https://github.com/mend-toolkit/mend-examples](https://github.com/mend-toolkit/mend-examples), which we encourage you to visit today.
+
 ![Logo](https://whitesource-resources.s3.amazonaws.com/ws-sig-images/Whitesource_Logo_178x44.png)  
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
