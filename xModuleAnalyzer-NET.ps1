@@ -224,7 +224,7 @@ If ($AppPaths.Count -gt 0) {
 					-f "$fsaJarPath","$c",$AppPaths[$i],$ScanDirs[$i],"$productName",$ProjectNames[$i], "$viaDebug".ToLower();
 		
 		Log "`tUA Command: $UACmd`n" -NoEcho
-		$CmdOutput = (cmd /c "$UACmd" 2>&1); $eCode = $LASTEXITCODE;
+		$CmdOutput = (cmd /c "$UACmd"); $eCode = $LASTEXITCODE;
 		Log -Text $CmdOutput -NoEcho
 		
 		If ($eCode -eq 0) {
